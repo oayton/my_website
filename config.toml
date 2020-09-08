@@ -111,10 +111,10 @@ disqusShortname = ""
       url = "blogs/magna"
 
     [[params.tiles.showcase]]
-      title = "Other Interests"
-      subtitle = "I'm more than a data guru!"
-      image = "pic04.jpg"
-      url = "blogs/ipsum"
+      title = "NYT Masks"
+      subtitle = "How does Mask uptake compare accross the US?"
+      image = "pic07.jpg"
+      url = "blogs/blog5"
 
     #[[params.tiles.showcase]]
      # title = "Consequat"
@@ -181,7 +181,7 @@ disqusShortname = ""
 
     [[params.contact.address]]
     title = "Address"
-    street = "Ebury Bridge Rd"
+    street = "London Business School"
     city = "London"
     country = "United Kingdom"
 
