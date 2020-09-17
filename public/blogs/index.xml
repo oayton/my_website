@@ -57,5 +57,45 @@ tidyweather &amp;lt;- tidyweather %&amp;gt;% mutate(date = ymd(paste(as.characte
       <description>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</description>
     </item>
     
+    <item>
+      <title>boris</title>
+      <link>/blogs/brois/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/blogs/brois/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+When you click the Knit button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</description>
+    </item>
+    
+    <item>
+      <title>boris</title>
+      <link>/blogs/climate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/blogs/climate/</guid>
+      <description>Climate change and temperature anomalies weather &amp;lt;- read_csv(&amp;quot;https://data.giss.nasa.gov/gistemp/tabledata_v3/NH.Ts+dSST.csv&amp;quot;, skip = 1, na = &amp;quot;***&amp;quot;) tidyweather &amp;lt;- weather %&amp;gt;% select(Year,Jan,Feb,Mar,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec) %&amp;gt;% gather(&amp;quot;month&amp;quot;,&amp;quot;delta&amp;quot;,2:12) Plotting Information Let us plot the data using a time-series scatter plot, and add a trendline.
+tidyweather &amp;lt;- tidyweather %&amp;gt;% mutate(date = ymd(paste(as.character(Year), month, &amp;quot;1&amp;quot;)), month = month(date, label=TRUE), year = year(date)) ggplot(tidyweather, aes(x=date, y = delta))+ geom_point()+ geom_smooth(color=&amp;quot;red&amp;quot;) + theme_bw() + labs ( title = &amp;quot;Weather Anomalies&amp;quot; ) Is the effect of increasing temperature more pronounced in some months?</description>
+    </item>
+    
+    <item>
+      <title>Boris Bikes</title>
+      <link>/blogs/bikes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/blogs/bikes/</guid>
+      <description>Climate change and temperature anomalies weather &amp;lt;- read_csv(&amp;quot;https://data.giss.nasa.gov/gistemp/tabledata_v3/NH.Ts+dSST.csv&amp;quot;, skip = 1, na = &amp;quot;***&amp;quot;) tidyweather &amp;lt;- weather %&amp;gt;% select(Year,Jan,Feb,Mar,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec) %&amp;gt;% gather(&amp;quot;month&amp;quot;,&amp;quot;delta&amp;quot;,2:12) Plotting Information Let us plot the data using a time-series scatter plot, and add a trendline.
+tidyweather &amp;lt;- tidyweather %&amp;gt;% mutate(date = ymd(paste(as.character(Year), month, &amp;quot;1&amp;quot;)), month = month(date, label=TRUE), year = year(date)) ggplot(tidyweather, aes(x=date, y = delta))+ geom_point()+ geom_smooth(color=&amp;quot;red&amp;quot;) + theme_bw() + labs ( title = &amp;quot;Weather Anomalies&amp;quot; ) Is the effect of increasing temperature more pronounced in some months?</description>
+    </item>
+    
+    <item>
+      <title>borisbikes</title>
+      <link>/blogs/boris/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/blogs/boris/</guid>
+      <description>Climate change and temperature anomalies weather &amp;lt;- read_csv(&amp;quot;https://data.giss.nasa.gov/gistemp/tabledata_v3/NH.Ts+dSST.csv&amp;quot;, skip = 1, na = &amp;quot;***&amp;quot;) tidyweather &amp;lt;- weather %&amp;gt;% select(Year,Jan,Feb,Mar,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec) %&amp;gt;% gather(&amp;quot;month&amp;quot;,&amp;quot;delta&amp;quot;,2:12) Plotting Information Let us plot the data using a time-series scatter plot, and add a trendline.
+tidyweather &amp;lt;- tidyweather %&amp;gt;% mutate(date = ymd(paste(as.character(Year), month, &amp;quot;1&amp;quot;)), month = month(date, label=TRUE), year = year(date)) ggplot(tidyweather, aes(x=date, y = delta))+ geom_point()+ geom_smooth(color=&amp;quot;red&amp;quot;) + theme_bw() + labs ( title = &amp;quot;Weather Anomalies&amp;quot; ) Is the effect of increasing temperature more pronounced in some months?</description>
+    </item>
+    
   </channel>
 </rss>

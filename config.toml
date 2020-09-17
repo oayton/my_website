@@ -108,13 +108,13 @@ disqusShortname = ""
       title = "Climate Change"
       subtitle = "What are we heading?"
       image = "pic09.png"
-      url = "projects/blog5"
+      url = "blogs/climate"
 
     [[params.tiles.showcase]]
      title = "NYT Masks"
      subtitle = "How does Mask uptake compare accross the US?"
      image = "pic12.jpg"
-     url = "blogs/blog5"
+     url = "blogs/bikes"
 
     #[[params.tiles.showcase]]
      # title = "Consequat"
