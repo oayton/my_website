@@ -19,3 +19,7 @@ Matrix
 mosaic
 here
 socviz
+ggthemes
+lubridate
+httr
+readxl

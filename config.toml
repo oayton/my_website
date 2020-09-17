@@ -93,8 +93,8 @@ disqusShortname = ""
     # Display your showcases here.
     
     [[params.tiles.showcase]]
-      title = "Python"
-      subtitle = "Data Analysis using Python"
+      title = "CV"
+      subtitle = "More about me."
       image = "pic01.jpg"
       url = "blogs/aliquam"
 
