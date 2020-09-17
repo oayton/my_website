@@ -12,13 +12,13 @@
     
     
     <item>
-      <title>Mask Acceptance</title>
-      <link>/blogs/blog5/</link>
-      <pubDate>Mon, 07 Sep 2020 00:00:00 +0000</pubDate>
+      <title>Lessons in R</title>
+      <link>/blogs/analysis-1/</link>
+      <pubDate>Thu, 17 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>/blogs/blog5/</guid>
-      <description>NYT mask use Github source for data https://github.com/nytimes/covid-19-data/tree/master/mask-use
- Getting the data url &amp;lt;- &amp;quot;https://github.com/nytimes/covid-19-data/raw/master/mask-use/mask-use-by-county.csv&amp;quot; nyt_mask_survey &amp;lt;- read_csv(url) nyt_mask_survey &amp;lt;- nyt_mask_survey %&amp;gt;% clean_names() %&amp;gt;% mutate( mostly_yes= frequently+always, mostly_no = never+rarely, delta = mostly_yes-mostly_no ) glimpse(nyt_mask_survey) ## Rows: 3,142 ## Columns: 9 ## $ countyfp &amp;lt;chr&amp;gt; &amp;quot;01001&amp;quot;, &amp;quot;01003&amp;quot;, &amp;quot;01005&amp;quot;, &amp;quot;01007&amp;quot;, &amp;quot;01009&amp;quot;, &amp;quot;01011&amp;quot;, &amp;quot;010… ## $ never &amp;lt;dbl&amp;gt; 0.053, 0.083, 0.067, 0.020, 0.053, 0.031, 0.102, 0.152, 0.… ## $ rarely &amp;lt;dbl&amp;gt; 0.</description>
+      <guid>/blogs/analysis-1/</guid>
+      <description>Climate change and temperature anomalies weather &amp;lt;- read_csv(&amp;quot;https://data.giss.nasa.gov/gistemp/tabledata_v3/NH.Ts+dSST.csv&amp;quot;, skip = 1, na = &amp;quot;***&amp;quot;) tidyweather &amp;lt;- weather %&amp;gt;% select(Year,Jan,Feb,Mar,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec) %&amp;gt;% gather(&amp;quot;month&amp;quot;,&amp;quot;delta&amp;quot;,2:12) Plotting Information Let us plot the data using a time-series scatter plot, and add a trendline.
+tidyweather &amp;lt;- tidyweather %&amp;gt;% mutate(date = ymd(paste(as.character(Year), month, &amp;quot;1&amp;quot;)), month = month(date, label=TRUE), year = year(date)) ggplot(tidyweather, aes(x=date, y = delta))+ geom_point()+ geom_smooth(color=&amp;quot;red&amp;quot;) + theme_bw() + labs ( title = &amp;quot;Weather Anomalies&amp;quot; ) Is the effect of increasing temperature more pronounced in some months?</description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@
       <pubDate>Tue, 31 Oct 2017 22:42:51 -0500</pubDate>
       
       <guid>/blogs/aliquam/</guid>
-      <description></description>
+      <description>knitr::opts_chunk$set( message = FALSE, warning = FALSE, tidy=FALSE, # display code as typed size=&amp;quot;small&amp;quot;) # slightly smaller font for code options(digits = 3) # default figure size knitr::opts_chunk$set( fig.width=6.75, fig.height=6.75, fig.align = &amp;quot;center&amp;quot; ) library(tidyverse) # Load ggplot2, dplyr, and all the other tidyverse packages library(skimr) library(mosaic) library(ggthemes) library(lubridate) library(here) library(janitor) library(httr) library(readxl) library(vroom) #remotes::install_github(&amp;quot;kjhealy/socviz&amp;quot;) library(socviz) Climate change and temperature anomalies weather &amp;lt;- read_csv(&amp;quot;https://data.giss.nasa.gov/gistemp/tabledata_v3/NH.Ts+dSST.csv&amp;quot;, skip = 1, na = &amp;quot;***&amp;quot;) tidyweather &amp;lt;- weather %&amp;gt;% select(Year,Jan,Feb,Mar,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec) %&amp;gt;% gather(&amp;quot;month&amp;quot;,&amp;quot;delta&amp;quot;,2:12) Plotting Information Let us plot the data using a time-series scatter plot, and add a trendline.</description>
     </item>
     
     <item>

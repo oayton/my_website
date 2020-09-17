@@ -78,7 +78,55 @@
                             
                                 <span class="image main"><img src="/img/blogs/pic07.jpg" alt="" /></span>
                             
-                            
+                            <pre><code class="language-{r," data-lang="{r,">knitr::opts_chunk$set(
+  message = FALSE, 
+  warning = FALSE, 
+  tidy=FALSE,     # display code as typed
+  size=&quot;small&quot;)   # slightly smaller font for code
+options(digits = 3)
+
+# default figure size
+knitr::opts_chunk$set(
+  fig.width=6.75, 
+  fig.height=6.75,
+  fig.align = &quot;center&quot;
+)
+</code></pre><pre><code class="language-{r" data-lang="{r">library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
+library(skimr)
+library(mosaic)
+library(ggthemes)
+library(lubridate)
+library(here)
+library(janitor)
+library(httr)
+library(readxl)
+library(vroom)
+#remotes::install_github(&quot;kjhealy/socviz&quot;)
+library(socviz)
+</code></pre><h1 id="climate-change-and-temperature-anomalies">Climate change and temperature anomalies</h1>
+<pre><code class="language-{r" data-lang="{r">weather &lt;- 
+  read_csv(&quot;https://data.giss.nasa.gov/gistemp/tabledata_v3/NH.Ts+dSST.csv&quot;, 
+           skip = 1, 
+           na = &quot;***&quot;)
+</code></pre><pre><code class="language-{r" data-lang="{r">tidyweather &lt;- weather %&gt;% select(Year,Jan,Feb,Mar,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec) %&gt;% 
+  gather(&quot;month&quot;,&quot;delta&quot;,2:12)
+</code></pre><h2 id="plotting-information">Plotting Information</h2>
+<p>Let us plot the data using a time-series scatter plot, and add a trendline.</p>
+<pre><code class="language-{r" data-lang="{r">
+tidyweather &lt;- tidyweather %&gt;%
+  mutate(date = ymd(paste(as.character(Year), month, &quot;1&quot;)),
+         month = month(date, label=TRUE),
+         year = year(date))
+
+ggplot(tidyweather, aes(x=date, y = delta))+
+  geom_point()+
+  geom_smooth(color=&quot;red&quot;) +
+  theme_bw() +
+  labs (
+    title = &quot;Weather Anomalies&quot;
+  )
+
+</code></pre>
                         </div>
                     </section>
             <!-- Disqus Inject -->
