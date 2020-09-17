@@ -4,7 +4,7 @@ baseURL = "https://oliver-ayton.netlify.app/"
 languageCode = "en-us"
 title = "Portfolio Website for Oliver Ayton"
 theme = "forty"
-
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 # Enter your tracking code to enable Google Analytics
 googleAnalytics = ""
 
@@ -20,7 +20,7 @@ disqusShortname = ""
   # CSS class.
 
   # Provide your metadata here.
-  name = "Oliver Ayton Hello"
+  name = "Oliver Ayton"
   description = "I am passionate about disruptive tech, and looking to work in a Product Manager role. I have a MSc Analytics and Management from LBS, and a First-Class degree in International Business and Spanish from Edinburgh University. "
 
   # Link custom assets relative to /static
@@ -29,7 +29,7 @@ disqusShortname = ""
   favicon    = "favicon.ico"
 
   # Just a custom image variable, please define it in .md files for content.
-  image = ""
+  image = "pic11.png"
 
   # 404 error customization
   [params.error404]
@@ -94,27 +94,27 @@ disqusShortname = ""
     
     [[params.tiles.showcase]]
       title = "CV"
-      subtitle = "More about me."
-      image = "pic01.jpg"
+      subtitle = "More about me"
+      image = "pic10.png"
       url = "blogs/aliquam"
 
     [[params.tiles.showcase]]
-      title = "R"
-      subtitle = "Projects & relevant work I have completed using R."
-      image = "pic02.jpg"
-      url = "blogs/tempus"
-
-    [[params.tiles.showcase]]
-      title = "Web Development"
+      title = "Git Repo"
       subtitle = "Freelance work as a full-stack web developer."
-      image = "pic03.jpg"
-      url = "blogs/magna"
+      image = "coding.png"
+      url = "https://github.com/oayton"
+      
+    [[params.tiles.showcase]]
+      title = "Climate Change"
+      subtitle = "What are we heading?"
+      image = "pic09.png"
+      url = "projects/blog5"
 
     [[params.tiles.showcase]]
-      title = "NYT Masks"
-      subtitle = "How does Mask uptake compare accross the US?"
-      image = "pic07.jpg"
-      url = "blogs/blog5"
+     title = "NYT Masks"
+     subtitle = "How does Mask uptake compare accross the US?"
+     image = "pic12.jpg"
+     url = "blogs/blog5"
 
     #[[params.tiles.showcase]]
      # title = "Consequat"
