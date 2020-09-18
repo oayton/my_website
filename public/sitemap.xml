@@ -92,15 +92,15 @@
   </url>
   
   <url>
-    <loc>/blogs/climate/</loc>
-  </url>
-  
-  <url>
     <loc>/blogs/bikes/</loc>
   </url>
   
   <url>
     <loc>/blogs/boris/</loc>
+  </url>
+  
+  <url>
+    <loc>/blogs/climate/</loc>
   </url>
   
 </urlset>
