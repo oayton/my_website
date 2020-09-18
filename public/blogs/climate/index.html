@@ -79,14 +79,14 @@
                             
 
 
-<div id="climate-change-and-temperature-anomalies" class="section level1">
-<h1>Climate change and temperature anomalies</h1>
+<div id="climate-change" class="section level2">
+<h2>Climate Change</h2>
+<p>The data for this analysis has been taken from NASA through the following link:</p>
 <pre class="r"><code>weather &lt;- 
   read_csv(&quot;https://data.giss.nasa.gov/gistemp/tabledata_v3/NH.Ts+dSST.csv&quot;, 
            skip = 1, 
            na = &quot;***&quot;)</code></pre>
-<pre class="r"><code>tidyweather &lt;- weather %&gt;% select(Year,Jan,Feb,Mar,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec) %&gt;% 
-  gather(&quot;month&quot;,&quot;delta&quot;,2:12)</code></pre>
+</div>
 <div id="plotting-information" class="section level2">
 <h2>Plotting Information</h2>
 <p>Let us plot the data using a time-series scatter plot, and add a trendline.</p>
@@ -100,8 +100,14 @@ ggplot(tidyweather, aes(x=date, y = delta))+
   geom_smooth(color=&quot;red&quot;) +
   theme_bw() +
   labs (
-    title = &quot;Weather Anomalies&quot;
-  )</code></pre>
+    title = &quot;Weather Anomalies&quot;,
+    caption = &quot;Source: Nasa&quot;
+  ) +
+  theme(plot.title = element_text(face = &quot;bold&quot;, size = 10, margin=margin(b = 15))) +
+  theme(plot.subtitle = element_text(size = 8)) +
+  theme(axis.title.x = element_text(face = &quot;bold&quot;, size = 10)) +
+  theme(axis.title.y = element_text(face = &quot;bold&quot;, size = 10)) +
+  theme(plot.caption = element_text(face = &quot;bold&quot;, size = 8))</code></pre>
 <p><img src="/blogs/climate_files/figure-html/scatter_plot-1.png" width="648" style="display: block; margin: auto;" /></p>
 <p>Is the effect of increasing temperature more pronounced in some months?</p>
 <p><img src="/blogs/climate_files/figure-html/facet_wrap-1.png" width="648" style="display: block; margin: auto;" /></p>
@@ -122,8 +128,14 @@ ggplot(tidyweather, aes(x=date, y = delta))+
   theme_bw() +                #theme
   labs (
     title = &quot;Density Plot for Monthly Temperature Anomalies&quot;,
+    caption = &quot;Source: Nasa&quot;,
     y     = &quot;Density&quot;         #changing y-axis label to sentence case
-  )</code></pre>
+  ) +
+  theme(plot.title = element_text(face = &quot;bold&quot;, size = 10, margin=margin(b = 15))) +
+  theme(plot.subtitle = element_text(size = 8)) +
+  theme(axis.title.x = element_text(face = &quot;bold&quot;, size = 10)) +
+  theme(axis.title.y = element_text(face = &quot;bold&quot;, size = 10)) +
+  theme(plot.caption = element_text(face = &quot;bold&quot;, size = 8))</code></pre>
 <p><img src="/blogs/climate_files/figure-html/density_plot-1.png" width="648" style="display: block; margin: auto;" /></p>
 <p>So far, we have been working with monthly anomalies. However, we might be interested in average annual anomalies.</p>
 <pre class="r"><code>#creating yearly averages
@@ -145,8 +157,14 @@ ggplot(average_annual_anomaly, aes(x=Year, y=annual_average_delta))+
   theme_bw() +
   labs (
     title = &quot;Average Yearly Anomaly&quot;,
+    caption = &quot;Source: Nasa&quot;,
     y     = &quot;Average Annual Delta&quot;
-  )                         </code></pre>
+  ) +
+  theme(plot.title = element_text(face = &quot;bold&quot;, size = 10, margin=margin(b = 15))) +
+  theme(plot.subtitle = element_text(size = 8)) +
+  theme(axis.title.x = element_text(face = &quot;bold&quot;, size = 10)) +
+  theme(axis.title.y = element_text(face = &quot;bold&quot;, size = 10)) +
+  theme(plot.caption = element_text(face = &quot;bold&quot;, size = 8))</code></pre>
 <p><img src="/blogs/climate_files/figure-html/averaging-1.png" width="648" style="display: block; margin: auto;" /></p>
 </div>
 <div id="confidence-interval-for-delta" class="section level2">
@@ -199,7 +217,6 @@ formula_ci_infer %&gt;%  get_confidence_interval(level = 0.95,type=&quot;percent
 ##      &lt;dbl&gt;    &lt;dbl&gt;
 ## 1    0.912     1.01</code></pre>
 <p>The 95% Confidence Interval values for the average annual temperature delta between years 2011-present is between 0.91C to 1.02C as compared to the base year. This is a worrying result as it represents a significant increase since 2011. Which as mentioned, could lead to major climate changes.</p>
-</div>
 </div>
 
                         </div>

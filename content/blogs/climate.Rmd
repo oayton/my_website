@@ -35,8 +35,14 @@ library(vroom)
 #remotes::install_github("kjhealy/socviz")
 library(socviz)
 ```
-# Climate change and temperature anomalies
+## Climate Change
 
+```{r, echo=FALSE}
+# Define variable containing url
+url <- "https://im-media.voltron.voanews.com/Drupal/01live-166/styles/sourced/s3/2019-09/reu_climate.jpg?itok=ePC-D04-"
+```
+
+The data for this analysis has been taken from NASA through the following link:
 ```{r weather_data, cache=TRUE}
 weather <- 
   read_csv("https://data.giss.nasa.gov/gistemp/tabledata_v3/NH.Ts+dSST.csv", 
@@ -44,7 +50,7 @@ weather <-
            na = "***")
 ```
 
-```{r tidyweather}
+```{r tidyweather, include = FALSE}
 tidyweather <- weather %>% select(Year,Jan,Feb,Mar,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec) %>% 
   gather("month","delta",2:12)
 ```
@@ -66,8 +72,14 @@ ggplot(tidyweather, aes(x=date, y = delta))+
   geom_smooth(color="red") +
   theme_bw() +
   labs (
-    title = "Weather Anomalies"
-  )
+    title = "Weather Anomalies",
+    caption = "Source: Nasa"
+  ) +
+  theme(plot.title = element_text(face = "bold", size = 10, margin=margin(b = 15))) +
+  theme(plot.subtitle = element_text(size = 8)) +
+  theme(axis.title.x = element_text(face = "bold", size = 10)) +
+  theme(axis.title.y = element_text(face = "bold", size = 10)) +
+  theme(plot.caption = element_text(face = "bold", size = 8))
 
 ```
 
@@ -81,8 +93,15 @@ ggplot(tidyweather, aes(x=date, y = delta))+
   geom_smooth(color="red") +
   theme_bw() +
   labs (
-    title = "Weather Anomalies"
-  ) + facet_wrap(~month)
+    title = "Weather Anomalies",
+    caption = "Source: Nasa"
+  ) + facet_wrap(~month) +
+  theme(plot.title = element_text(face = "bold", size = 10, margin=margin(b = 15))) +
+  theme(plot.subtitle = element_text(size = 8)) +
+  theme(axis.title.x = element_text(face = "bold", size = 10)) +
+  theme(axis.title.y = element_text(face = "bold", size = 10)) +
+  theme(plot.caption = element_text(face = "bold", size = 8))
+
 ```
 
 It is sometimes useful to group data into different time periods to study historical data. For example, we often refer to decades such as 1970s, 1980s, 1990s etc. to refer to a period of time. NASA calculates a temperature anomaly, as difference form the base periof of 1951-1980. The code below creates a new data frame called `comparison` that groups data in five time periods: 1881-1920, 1921-1950, 1951-1980, 1981-2010 and 2011-present. 
@@ -112,8 +131,14 @@ ggplot(comparison, aes(x=delta, fill=interval))+
   theme_bw() +                #theme
   labs (
     title = "Density Plot for Monthly Temperature Anomalies",
+    caption = "Source: Nasa",
     y     = "Density"         #changing y-axis label to sentence case
-  )
+  ) +
+  theme(plot.title = element_text(face = "bold", size = 10, margin=margin(b = 15))) +
+  theme(plot.subtitle = element_text(size = 8)) +
+  theme(axis.title.x = element_text(face = "bold", size = 10)) +
+  theme(axis.title.y = element_text(face = "bold", size = 10)) +
+  theme(plot.caption = element_text(face = "bold", size = 8))
 
 ```
 
@@ -140,8 +165,14 @@ ggplot(average_annual_anomaly, aes(x=Year, y=annual_average_delta))+
   theme_bw() +
   labs (
     title = "Average Yearly Anomaly",
+    caption = "Source: Nasa",
     y     = "Average Annual Delta"
-  )                         
+  ) +
+  theme(plot.title = element_text(face = "bold", size = 10, margin=margin(b = 15))) +
+  theme(plot.subtitle = element_text(size = 8)) +
+  theme(axis.title.x = element_text(face = "bold", size = 10)) +
+  theme(axis.title.y = element_text(face = "bold", size = 10)) +
+  theme(plot.caption = element_text(face = "bold", size = 8))
 ```
 
 
